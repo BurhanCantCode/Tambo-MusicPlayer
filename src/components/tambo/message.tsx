@@ -495,7 +495,7 @@ const MessageRenderedComponentArea = React.forwardRef<
             </button>
           </div>
         ) : (
-          <div className="w-full pt-2 px-2">{message.renderedComponent}</div>
+          <div className="w-full pt-2 px-2 pb-4">{message.renderedComponent}</div>
         ))}
     </div>
   );

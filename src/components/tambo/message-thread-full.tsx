@@ -97,7 +97,7 @@ export const MessageThreadFull = React.forwardRef<
       {historyPosition === "left" && threadHistorySidebar}
 
       <ThreadContainer ref={mergedRef} className={className} {...props}>
-        <ScrollableMessageContainer className="p-4">
+        <ScrollableMessageContainer className="p-4 pb-8">
           <ThreadContent variant={variant}>
             <ThreadContentMessages />
           </ThreadContent>
