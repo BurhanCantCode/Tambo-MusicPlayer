@@ -20,7 +20,7 @@ export default function Home() {
       >
         <TamboMcpProvider mcpServers={mcpServers}>
           <div className="w-full max-w-4xl mx-auto">
-            <MessageThreadFull contextKey="tambo-template" />
+            <MessageThreadFull contextKey="music-chat" />
           </div>
         </TamboMcpProvider>
       </TamboProvider>
