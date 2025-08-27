@@ -52,7 +52,7 @@ export function MusicCardSkeleton() {
           <div className="relative p-6 flex items-center gap-6">
             {/* album cover skeleton */}
             <div className="relative shrink-0">
-              <div className="w-40 h-40 rounded-md bg-gray-700 ring-1 ring-gray-600 animate-pulse" />
+              <div className="w-32 h-32 rounded-md bg-gray-700 ring-1 ring-gray-600 animate-pulse" />
               <div className="pointer-events-none absolute inset-0 rounded-md bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
             </div>
 
@@ -118,13 +118,7 @@ function PauseIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-function VolumeIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M4 10v4h4l5 4V6l-5 4H4zm12.5 2a3.5 3.5 0 0 0-2.3-3.3v6.7a3.5 3.5 0 0 0 2.3-3.4zm-2.3-7.2v2.2a6 6 0 0 1 0 10v2.2a8.2 8.2 0 0 0 0-14.4z" />
-    </svg>
-  );
-}
+
 function ExternalIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
@@ -298,13 +292,29 @@ function MusicCardCore({
              <div className="absolute inset-0 [mask-image:linear-gradient(120deg,transparent,black_30%,black_70%,transparent)] bg-white/5" />
            </div>
 
-          <div className="relative p-6 flex items-center gap-6">
+          <div className="relative p-4 flex items-center gap-4">
+            {/* Top-right external link button */}
+            <button
+              onClick={() => window.open(link, "_blank")}
+              className="
+                absolute top-2 right-2 z-10
+                h-8 w-8 rounded-full
+                flex items-center justify-center
+                bg-gray-700/50 backdrop-blur-xl border border-gray-600
+                shadow-sm hover:bg-gray-700/70 transition
+              "
+              aria-label="Open full track"
+              title="Open full track"
+            >
+              <ExternalIcon className="w-4 h-4 text-white" />
+            </button>
+
             {/* album cover with glass shine */}
             <div className="relative shrink-0">
               <img
                 src={albumCover || "/default-album.png"}
                 alt={album}
-                className="w-40 h-40 rounded-md object-cover ring-1 ring-gray-600"
+                className="w-32 h-32 rounded-md object-cover ring-1 ring-gray-600"
               />
                              <div className="pointer-events-none absolute inset-0 rounded-md bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
             </div>
@@ -319,11 +329,32 @@ function MusicCardCore({
                  <div className="text-gray-300 text-sm truncate">{album}</div>
               </div>
 
-              {/* slider */}
+              {/* controls & slider */}
               <div className="flex items-center gap-3">
-                <span className="text-[11px] text-gray-300 font-mono min-w-[34px] text-right">
-                  {format(Math.floor(currentTime))}
-                </span>
+                                 <button
+                   onClick={togglePlay}
+                   disabled={isLoading}
+                                         className={`
+                       group relative h-9 w-9 rounded-full
+                       border border-gray-600 bg-gray-700/50
+                       backdrop-blur-xl
+                       shadow-lg
+                       transition-transform active:scale-[0.97] hover:bg-gray-700/70
+                       disabled:opacity-60 disabled:cursor-not-allowed
+                     `}
+                    aria-label={isLoading ? "Loading..." : isPlaying ? "Pause" : "Play"}
+                  >
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent" />
+                    {isLoading ? (
+                      <div className="relative flex items-center justify-center">
+                        <div className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                      </div>
+                    ) : isPlaying ? (
+                      <PauseIcon className="relative mx-auto text-white w-6 h-6" />
+                    ) : (
+                      <PlayIcon className="relative mx-auto text-white w-6 h-6" />
+                    )}
+                  </button>
 
                                  <div className="relative flex-1 h-2">
                    {/* track */}
@@ -356,54 +387,6 @@ function MusicCardCore({
                 <span className="text-[11px] text-gray-300 font-mono min-w-[34px]">
                   {format(Math.floor(audioDuration))}
                 </span>
-              </div>
-
-              {/* actions */}
-              <div className="mt-5 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={togglePlay}
-                    disabled={isLoading}
-                                         className={`
-                       group relative h-12 w-12 rounded-full
-                       border border-gray-600 bg-gray-700/50
-                       backdrop-blur-xl
-                       shadow-lg
-                       transition-transform active:scale-[0.97] hover:bg-gray-700/70
-                       disabled:opacity-60 disabled:cursor-not-allowed
-                     `}
-                    aria-label={isLoading ? "Loading..." : isPlaying ? "Pause" : "Play"}
-                  >
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent" />
-                    {isLoading ? (
-                      <div className="relative flex items-center justify-center">
-                        <div className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-                      </div>
-                    ) : isPlaying ? (
-                      <PauseIcon className="relative mx-auto text-white w-6 h-6" />
-                    ) : (
-                      <PlayIcon className="relative mx-auto text-white w-6 h-6" />
-                    )}
-                  </button>
-                </div>
-
-                {/* neutral glass CTA (no loud brand colors) */}
-                                 <button
-                   onClick={() => window.open(link, "_blank")}
-                   className="
-                     group relative px-5 h-11 rounded-full
-                     text-[14px] font-semibold text-white
-                     border border-gray-600 bg-gray-700/50 backdrop-blur-xl
-                     shadow-lg
-                     hover:bg-gray-700/70 active:scale-[0.99] transition
-                   "
-                >
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-b from-white/10 to-transparent" />
-                  <span className="relative inline-flex items-center gap-2">
-                    Open full track
-                    <ExternalIcon className="w-4 h-4" />
-                  </span>
-                </button>
               </div>
             </div>
           </div>
