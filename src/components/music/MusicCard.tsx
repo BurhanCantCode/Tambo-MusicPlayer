@@ -385,18 +385,6 @@ function MusicCardCore({
                       <PlayIcon className="relative mx-auto text-white w-6 h-6" />
                     )}
                   </button>
-
-                                     <button
-                     className="
-                       relative h-10 w-10 rounded-full border border-gray-700 bg-gray-800/40
-                       backdrop-blur-xl hover:bg-gray-800/60 transition
-                       shadow-sm
-                     "
-                    aria-label="Volume"
-                    type="button"
-                  >
-                    <VolumeIcon className="mx-auto text-white w-5 h-5" />
-                  </button>
                 </div>
 
                 {/* neutral glass CTA (no loud brand colors) */}
