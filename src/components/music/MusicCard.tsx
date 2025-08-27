@@ -385,7 +385,7 @@ function MusicCardCore({
                 </div>
 
                 <span className="text-[11px] text-gray-300 font-mono min-w-[34px]">
-                  {format(Math.floor(audioDuration))}
+                  {format(Math.floor(currentTime))}
                 </span>
               </div>
             </div>
