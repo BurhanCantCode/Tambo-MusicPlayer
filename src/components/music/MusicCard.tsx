@@ -37,73 +37,68 @@ export function MusicCardSkeleton() {
         {/* Liquid Glass panel - skeleton version */}
         <div
           className="
-            relative rounded-[26px] overflow-hidden
-            border border-white/60
-            bg-black/40
-            backdrop-blur-md
-            shadow-[0_40px_80px_-30px_rgba(0,0,0,0.8),0_8px_16px_rgba(0,0,0,0.6)]
+            relative rounded-xl overflow-hidden
+            border border-gray-700
+            bg-gray-800/60
+            backdrop-blur-xl
           "
-          style={{
-            backgroundImage:
-              "radial-gradient(120% 140% at 0% 0%, rgba(255,255,255,0.22), rgba(255,255,255,0.02) 40%, rgba(255,255,255,0.06) 60%, rgba(0,0,0,0.08) 100%)",
-          }}
         >
           {/* glossy highlight sweep */}
           <div className="pointer-events-none absolute inset-0">
-            <div className="absolute -top-1 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 via-white/15 to-transparent" />
-            <div className="absolute inset-0 [mask-image:linear-gradient(120deg,transparent,black_30%,black_70%,transparent)] bg-white/15" />
+            <div className="absolute -top-1 left-0 right-0 h-1/2 bg-gradient-to-b from-white/10 via-white/5 to-transparent" />
+            <div className="absolute inset-0 [mask-image:linear-gradient(120deg,transparent,black_30%,black_70%,transparent)] bg-white/5" />
           </div>
 
           <div className="relative p-6 flex items-center gap-6">
             {/* album cover skeleton */}
             <div className="relative shrink-0">
-              <div className="w-28 h-28 rounded-2xl bg-white/30 ring-1 ring-white/30 shadow-2xl animate-pulse" />
-              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 via-white/15 to-transparent" />
+              <div className="w-40 h-40 rounded-md bg-gray-700 ring-1 ring-gray-600 animate-pulse" />
+              <div className="pointer-events-none absolute inset-0 rounded-md bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
             </div>
 
             {/* text + controls skeleton */}
             <div className="flex-1 min-w-0">
               <div className="mb-3">
-                <div className="h-7 bg-white/40 rounded-lg mb-2 animate-pulse" />
-                <div className="h-5 bg-white/30 rounded-lg mb-1 w-3/4 animate-pulse" />
-                <div className="h-4 bg-white/25 rounded-lg w-1/2 animate-pulse" />
+                <div className="h-7 bg-gray-600 rounded-sm mb-2 animate-pulse" />
+                <div className="h-5 bg-gray-500 rounded-sm mb-1 w-3/4 animate-pulse" />
+                <div className="h-4 bg-gray-400 rounded-sm w-1/2 animate-pulse" />
               </div>
 
               {/* slider skeleton */}
               <div className="flex items-center gap-3 mb-5">
-                <div className="h-3 w-8 bg-white/30 rounded animate-pulse" />
+                <div className="h-3 w-8 bg-gray-500 rounded animate-pulse" />
                 <div className="relative flex-1 h-2">
-                  <div className="absolute inset-0 rounded-full bg-white/40 backdrop-blur-sm border border-white/20" />
+                  <div className="absolute inset-0 rounded-full bg-gray-600 backdrop-blur-sm border border-gray-700" />
                 </div>
-                <div className="h-3 w-8 bg-white/30 rounded animate-pulse" />
+                <div className="h-3 w-8 bg-gray-500 rounded animate-pulse" />
               </div>
 
               {/* actions skeleton */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="h-12 w-12 rounded-full bg-white/40 animate-pulse" />
-                  <div className="h-10 w-10 rounded-full bg-white/30 animate-pulse" />
+                  <div className="h-12 w-12 rounded-full bg-gray-600 animate-pulse" />
+                  <div className="h-10 w-10 rounded-full bg-gray-500 animate-pulse" />
                 </div>
-                <div className="h-11 w-32 rounded-full bg-white/30 animate-pulse" />
+                <div className="h-11 w-32 rounded-full bg-gray-500 animate-pulse" />
               </div>
             </div>
           </div>
 
           {/* soft colored glow */}
           <div
-            className="pointer-events-none absolute -z-10 blur-[70px] opacity-50"
+            className="pointer-events-none absolute -z-10 blur-[30px] opacity-20"
             style={{
-              inset: "-40%",
+              inset: "-20%",
               background:
-                `radial-gradient(50% 50% at 20% 10%, rgba(255,255,255,0.25) 0%, transparent 60%),
-                 radial-gradient(60% 60% at 80% 90%, rgba(255,255,255,0.15) 0%, transparent 60%)`,
+                `radial-gradient(50% 50% at 20% 10%, rgba(255,255,255,0.1), transparent 60%),
+                 radial-gradient(60% 60% at 80% 90%, rgba(255,255,255,0.05) 0%, transparent 60%)`,
             }}
           />
         </div>
 
         {/* blurry background layers */}
-        <div className="absolute inset-0 -z-20 rounded-[28px] blur-2xl opacity-70 bg-gradient-to-r from-gray-600 to-gray-400" />
-        <div className="absolute inset-0 -z-10 rounded-[28px] blur-xl opacity-40 bg-gradient-to-r from-gray-500 to-gray-300" />
+        <div className="absolute inset-0 -z-20 rounded-xl blur-md opacity-70 bg-gray-900" />
+        <div className="absolute inset-0 -z-10 rounded-xl blur-sm opacity-40 bg-gray-800" />
       </div>
     </div>
   );
@@ -291,22 +286,16 @@ function MusicCardCore({
         {/* Liquid Glass panel */}
                  <div
            className="
-             relative rounded-[26px] overflow-hidden
-             border border-white/60
-             bg-black/40
-             backdrop-blur-md
-             shadow-[0_40px_80px_-30px_rgba(0,0,0,0.8),0_8px_16px_rgba(0,0,0,0.6)]
+             relative rounded-xl overflow-hidden
+             border border-gray-700
+             bg-gray-800/60
+             backdrop-blur-xl
            "
-          style={{
-            // very subtle inner refraction + noise
-            backgroundImage:
-              "radial-gradient(120% 140% at 0% 0%, rgba(255,255,255,0.22), rgba(255,255,255,0.02) 40%, rgba(255,255,255,0.06) 60%, rgba(0,0,0,0.08) 100%)",
-          }}
-        >
+          >
                      {/* glossy highlight sweep */}
            <div className="pointer-events-none absolute inset-0">
-             <div className="absolute -top-1 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 via-white/15 to-transparent" />
-             <div className="absolute inset-0 [mask-image:linear-gradient(120deg,transparent,black_30%,black_70%,transparent)] bg-white/15" />
+             <div className="absolute -top-1 left-0 right-0 h-1/2 bg-gradient-to-b from-white/10 via-white/5 to-transparent" />
+             <div className="absolute inset-0 [mask-image:linear-gradient(120deg,transparent,black_30%,black_70%,transparent)] bg-white/5" />
            </div>
 
           <div className="relative p-6 flex items-center gap-6">
@@ -315,43 +304,41 @@ function MusicCardCore({
               <img
                 src={albumCover || "/default-album.png"}
                 alt={album}
-                className="w-28 h-28 rounded-2xl object-cover ring-1 ring-white/30 shadow-2xl"
+                className="w-40 h-40 rounded-md object-cover ring-1 ring-gray-600"
               />
-                             <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 via-white/15 to-transparent" />
+                             <div className="pointer-events-none absolute inset-0 rounded-md bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
             </div>
 
             {/* text + controls */}
             <div className="flex-1 min-w-0">
               <div className="mb-3">
-                                 <h2 className="text-white text-2xl font-bold leading-tight truncate drop-shadow-lg">
+                                 <h2 className="text-white text-2xl font-bold leading-tight truncate">
                    {title}
                  </h2>
-                 <div className="text-white/95 truncate font-medium drop-shadow-md">by {artist}</div>
-                 <div className="text-white/85 text-sm truncate drop-shadow-md">from "{album}"</div>
+                 <div className="text-gray-300 truncate font-medium">{artist}</div>
+                 <div className="text-gray-300 text-sm truncate">{album}</div>
               </div>
 
               {/* slider */}
               <div className="flex items-center gap-3">
-                <span className="text-[11px] text-white/70 font-mono min-w-[34px] text-right">
+                <span className="text-[11px] text-gray-300 font-mono min-w-[34px] text-right">
                   {format(Math.floor(currentTime))}
                 </span>
 
                                  <div className="relative flex-1 h-2">
                    {/* track */}
-                   <div className="absolute inset-0 rounded-full bg-white/40 backdrop-blur-sm border border-white/20" />
+                   <div className="absolute inset-0 rounded-full bg-gray-600 backdrop-blur-sm border border-gray-700" />
                   {/* progress fill with specular edge */}
                   <div
-                    className="absolute left-0 top-0 h-2 rounded-full"
+                    className="absolute left-0 top-0 h-2 rounded-full bg-white/60"
                     style={{
                       width: `${pct}%`,
-                      background:
-                        "linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.6))",
-                      boxShadow: "0 0 14px rgba(255,255,255,0.45)",
+                      boxShadow: "none",
                     }}
                   />
                   {/* thumb */}
                   <div
-                    className="absolute -top-[6px] h-4 w-4 rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.35)] ring-1 ring-white/60"
+                    className="absolute -top-[6px] h-4 w-4 rounded-full bg-white shadow-md ring-1 ring-gray-400"
                     style={{ left: `calc(${pct}% - 8px)` }}
                   />
                   {/* native input */}
@@ -366,7 +353,7 @@ function MusicCardCore({
                   />
                 </div>
 
-                <span className="text-[11px] text-white/70 font-mono min-w-[34px]">
+                <span className="text-[11px] text-gray-300 font-mono min-w-[34px]">
                   {format(Math.floor(audioDuration))}
                 </span>
               </div>
@@ -379,15 +366,15 @@ function MusicCardCore({
                     disabled={isLoading}
                                          className={`
                        group relative h-12 w-12 rounded-full
-                       border border-white/70 bg-white/50
+                       border border-gray-600 bg-gray-700/50
                        backdrop-blur-xl
-                       shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_20px_rgba(0,0,0,0.5)]
-                       transition-transform active:scale-[0.97] hover:bg-white/60
+                       shadow-lg
+                       transition-transform active:scale-[0.97] hover:bg-gray-700/70
                        disabled:opacity-60 disabled:cursor-not-allowed
                      `}
                     aria-label={isLoading ? "Loading..." : isPlaying ? "Pause" : "Play"}
                   >
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/25 to-transparent" />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent" />
                     {isLoading ? (
                       <div className="relative flex items-center justify-center">
                         <div className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" />
@@ -401,9 +388,9 @@ function MusicCardCore({
 
                                      <button
                      className="
-                       relative h-10 w-10 rounded-full border border-white/50 bg-white/40
-                       backdrop-blur-xl hover:bg-white/50 transition
-                       shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]
+                       relative h-10 w-10 rounded-full border border-gray-700 bg-gray-800/40
+                       backdrop-blur-xl hover:bg-gray-800/60 transition
+                       shadow-sm
                      "
                     aria-label="Volume"
                     type="button"
@@ -418,12 +405,12 @@ function MusicCardCore({
                    className="
                      group relative px-5 h-11 rounded-full
                      text-[14px] font-semibold text-white
-                     border border-white/60 bg-white/40 backdrop-blur-xl
-                     shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_8px_20px_rgba(0,0,0,0.5)]
-                     hover:bg-white/50 active:scale-[0.99] transition drop-shadow-lg
+                     border border-gray-600 bg-gray-700/50 backdrop-blur-xl
+                     shadow-lg
+                     hover:bg-gray-700/70 active:scale-[0.99] transition
                    "
                 >
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-b from-white/20 to-transparent" />
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-b from-white/10 to-transparent" />
                   <span className="relative inline-flex items-center gap-2">
                     Open full track
                     <ExternalIcon className="w-4 h-4" />
@@ -435,19 +422,19 @@ function MusicCardCore({
 
           {/* soft colored glow sourced from cover to sell the glass */}
           <div
-            className="pointer-events-none absolute -z-10 blur-[70px] opacity-50"
+            className="pointer-events-none absolute -z-10 blur-[30px] opacity-20"
             style={{
-              inset: "-40%",
+              inset: "-20%",
               background:
-                `radial-gradient(50% 50% at 20% 10%, rgba(255,255,255,0.25) 0%, transparent 60%),
-                 radial-gradient(60% 60% at 80% 90%, rgba(255,255,255,0.15) 0%, transparent 60%)`,
+                `radial-gradient(50% 50% at 20% 10%, rgba(255,255,255,0.1), transparent 60%),
+                 radial-gradient(60% 60% at 80% 90%, rgba(255,255,255,0.05) 0%, transparent 60%)`,
             }}
           />
         </div>
 
                  {/* blurry album backdrop behind the card - more prominent */}
          <div
-           className="absolute inset-0 -z-20 rounded-[28px] blur-2xl opacity-70"
+           className="absolute inset-0 -z-20 rounded-xl blur-md opacity-70"
            style={{
              backgroundImage: `url(${albumCover || "/default-album.png"})`,
              backgroundSize: "cover",
@@ -457,7 +444,7 @@ function MusicCardCore({
          
          {/* Additional softer background layer for depth */}
          <div
-           className="absolute inset-0 -z-10 rounded-[28px] blur-xl opacity-40"
+           className="absolute inset-0 -z-10 rounded-xl blur-sm opacity-40"
            style={{
              backgroundImage: `url(${albumCover || "/default-album.png"})`,
              backgroundSize: "120%",
